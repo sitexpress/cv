@@ -28,16 +28,15 @@ export function CryptoComponent() {
   const cryptos = useAppSelector((state) => state.crypto.cryptos);
   const appStatus = useAppSelector((state) => state.app.status);
 
-
-
   const cryptosElements = cryptos.map((item, i) => (
     <Carousel.Slide pr={5} key={i}>
-      <Paper key={i} withBorder shadow="lg" radius="lg" p="xl" w={200}>
-        <Box pos="relative">
+      <Paper key={i} withBorder shadow="lg" radius={30} w={200}>
+        <Box pos="relative" p="xl">
           <LoadingOverlay
             visible={appStatus === 'loading'}
             zIndex={1000}
-            overlayProps={{ radius: 'sm', blur: 2 }}
+            overlayProps={{ radius: 'sm', blur: 10 }}
+            style={{ borderRadius: 30 }}
           />
           <>
             <Avatar src={SetAnAvatarByTokenName(item.TOKEN_SYMBOL)} size={50} radius="md" />
@@ -80,7 +79,7 @@ export function CryptoComponent() {
   }
 
   const refreshPrice = () => {
-      dispatch(fetchCryptolistsTC());
+    dispatch(fetchCryptolistsTC());
   };
 
   useEffect(() => {
