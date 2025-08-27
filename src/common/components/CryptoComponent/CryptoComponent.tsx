@@ -19,11 +19,10 @@ import { fetchCryptolistsTC } from '@/features/cryptoSlice';
 
 import '@mantine/carousel/styles.css';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import classes from './CryptoComponent.module.css';
 
 export function CryptoComponent() {
-  const [canClick, setCanClick] = useState(false);
   const dispatch = useAppDispatch();
   const cryptos = useAppSelector((state) => state.crypto.cryptos);
   const appStatus = useAppSelector((state) => state.app.status);
