@@ -1,8 +1,23 @@
+.headerContainer {
+  position: fixed;
+  top: 40px;
+  left: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
 .header {
+  width: 100%;
   height: 60px;
-  padding-left: var(--mantine-spacing-md);
-  padding-right: var(--mantine-spacing-md);
-  border-bottom: 1px solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  padding: 0 var(--mantine-spacing-md);
+  border-radius: 20px;
+  /* backdrop-filter: blur(18px);
+  background-color: rgba(46,46,46, 0.8); */
+  box-sizing: border-box;
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+  background-color: #2e2e2e;
 }
 
 .link {
@@ -12,7 +27,7 @@
   padding-left: var(--mantine-spacing-md);
   padding-right: var(--mantine-spacing-md);
   text-decoration: none;
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  color: light-dark(var(--mantine-color-white), var(--mantine-color-white));
   font-weight: 500;
   font-size: var(--mantine-font-size-sm);
 

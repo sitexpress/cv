@@ -1,12 +1,13 @@
 import { useEffect } from 'react';
-import { Box, Divider, Loader } from '@mantine/core';
 import { CryptoComponent } from '@/common/components/CryptoComponent/CryptoComponent';
-import { GridLine } from '@/common/components/Grid/Grid';
+import { Portfolio } from '@/common/components/Portfolio/Portfolio';
 import { Header } from '@/common/components/Header/Header';
 import { Hero } from '@/common/components/Hero/Hero';
 import { useAppDispatch, useAppSelector } from '@/common/hooks/hooks';
 import { setAppIsInitializedAC } from '@/features/appSlice';
 import { LoaderComponent } from '@/common/components/Hero/Loader';
+import { Vitae } from '@/common/components/Accordion/Vitae';
+import { Footer } from '@/common/components/Footer/Footer';
 
 export function HomePage() {
   const dispatch = useAppDispatch();
@@ -26,10 +27,10 @@ export function HomePage() {
         <>
           <Header />
           <Hero />
-          <Divider my="xs" label="portfolio" labelPosition="center" pt={100} mb={100}/>
-          <GridLine />
-          <Divider my="xs" label="crypto price's" labelPosition="center" pt={100} mb={100} />
+          <Portfolio />
+          <Vitae/>
           <CryptoComponent />
+          <Footer/>
         </>
       )}
     </>

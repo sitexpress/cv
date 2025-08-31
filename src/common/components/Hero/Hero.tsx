@@ -3,23 +3,20 @@ import { IconCheck } from '@tabler/icons-react';
 import img from '/images/img-2.png';
 import {
   Anchor,
-  Button,
   Container,
-  Group,
   Image,
   List,
-  Paper,
   Popover,
-  Skeleton,
   Text,
   ThemeIcon,
   Title,
   useMantineColorScheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { useAppDispatch, useAppSelector } from '@/common/hooks/hooks';
+import { useAppDispatch } from '@/common/hooks/hooks';
+import { useInvertedTheme } from '@/common/hooks/invertedColorTheme';
 import { setAppIsInitializedAC } from '@/features/appSlice';
-import { decrement, increment, refresh } from '@/features/incrementSlice';
+import { Increment } from '../Increment/Increment';
 import classes from './Hero.module.css';
 
 export function Hero() {
@@ -30,8 +27,8 @@ export function Hero() {
   const [openedE, { close: closeE, open: openE }] = useDisclosure(false);
 
   const dispatch = useAppDispatch();
-  const num = useAppSelector((state) => state.increment.value);
   const theme = useMantineColorScheme();
+  const { textCustomColors } = useInvertedTheme();
 
   useEffect(() => {
     setTimeout(() => {
@@ -40,23 +37,15 @@ export function Hero() {
   }, []);
 
   return (
-    <Container size="md">
+    <Container size="xl" mb={100} pt={200}>
       <div className={classes.inner}>
         <div className={classes.content}>
-            <div className="animate__animated animate__fadeInRight animate__delay-0.5s">
-              <Title className={classes.title}>
-                Гедгафов Султан <br /> <span className={classes.highlight}>JS TS React Next</span>
-                <br /> разработчик
-              </Title>
-            </div>
-          {/* <Text c="dimmed" mt="md">
-            Привет, я фронтенд-разработчик с коммерческим опытом. Работал над реальными проектами,
-            знаю не только основы, но и современные инструменты и подходы. Помимо вёрстки и
-            JavaScript/TypeScript, углубляюсь в оптимизацию производительности, сложные состояния
-            (Redux, MobX) и современные фреймворки (React/Vue). Сейчас активно развиваюсь в сторону
-            Fullstack (Node.js, базовый бэкенд) и улучшаю архитектурные навыки. Ищу интересные
-            проекты или команду, где смогу применять и расширять свой опыт.
-          </Text> */}
+          <div className="animate__animated animate__fadeInRight animate__delay-0.5s">
+            <Title className={classes.title} style={{ ...textCustomColors }}>
+              Гедгафов Султан <br /> <span className={classes.highlight}>JS TS React Next</span>
+              <br /> разработчик
+            </Title>
+          </div>
           <div className="animate__animated animate__pulse">
             <Text c="dimmed" mt="md">
               Портфолио сделано с использованием <br /> следующих технологий:
@@ -166,41 +155,8 @@ export function Hero() {
                 </Popover>
               </List.Item>
             </List>
-            <Paper p="xs" mt="xl" mb="xl" radius="xl" ta="center" shadow="xs">
-              <Text ta="center">Simple Increment (powered by RTK): </Text>
-              <Text c="blue.6" fw={700} size="21px">
-                {num}
-              </Text>
-            </Paper>
 
-            <Group mt={30}>
-              <Button
-                radius="xl"
-                size="md"
-                className={classes.control}
-                onClick={() => dispatch(refresh())}
-              >
-                Refresh
-              </Button>
-              <Button
-                variant="default"
-                radius="xl"
-                size="md"
-                className={classes.control}
-                onClick={() => dispatch(increment())}
-              >
-                Incremet
-              </Button>
-              <Button
-                variant="default"
-                radius="xl"
-                size="md"
-                className={classes.control}
-                onClick={() => dispatch(decrement())}
-              >
-                decrement
-              </Button>
-            </Group>
+            <Increment />
           </div>
         </div>
         <div className="animate__animated animate__backInRight  animate__delay-1s">
@@ -210,9 +166,9 @@ export function Hero() {
             style={
               theme.colorScheme === 'dark'
                 ? {
-                    filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.8))',
+                    filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.2))',
                   }
-                : { filter: 'drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5))' }
+                : { filter: 'drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.9))' }
             }
           />
         </div>

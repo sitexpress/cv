@@ -16,9 +16,6 @@ export const SetAnAvatarByTokenName = (tokenSymbol: any) => {
   if (tokenSymbol === 'eth') {
     return Eth;
   }
-  if (tokenSymbol === 'usdt') {
-    return;
-  }
   if (tokenSymbol === 'doge') {
     return DOGE;
   }

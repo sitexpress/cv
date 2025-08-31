@@ -1,8 +1,5 @@
 import { createTheme, Loader } from '@mantine/core';
 import { CssLoader } from './CssLoader';
-// export const theme = createTheme({
-//   /** Put your mantine theme override here */
-// });
 
 
 export const theme = createTheme({

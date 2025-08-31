@@ -1,33 +1,30 @@
-import { useState } from 'react';
-import { IconBulb, IconBulbFilled } from '@tabler/icons-react';
-import { Button, Group, Stack, useMantineColorScheme } from '@mantine/core';
+import { IconBulb, IconMoonStars } from '@tabler/icons-react';
+import { Button, useMantineColorScheme } from '@mantine/core';
+import { useInvertedTheme } from '@/common/hooks/invertedColorTheme';
 
 export const ColorSchemeToggle = () => {
-  const { setColorScheme, clearColorScheme } = useMantineColorScheme();
+  const { setColorScheme } = useMantineColorScheme();
   const theme = useMantineColorScheme();
-  console.log('theme:', theme);
+  const { backgroundCustomColors } = useInvertedTheme();
 
   return theme.colorScheme === 'light' ? (
     <Button
       onClick={() => {
         setColorScheme('dark');
       }}
-      bg="blue.3"
       radius="xl"
-      p={5}
     >
-      <IconBulbFilled />
+      <IconBulb />
     </Button>
   ) : (
     <Button
       onClick={() => {
         setColorScheme('light');
       }}
-      bg="blue.3"
       radius="xl"
-      p={5}
+      style={{...backgroundCustomColors}}
     >
-      <IconBulb />
+      <IconMoonStars style={{...backgroundCustomColors}}/>
     </Button>
   );
 };

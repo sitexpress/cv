@@ -88,11 +88,11 @@ export function Header() {
   ));
 
   return (
-    <Box pb={120}>
+    <Box pb={120} className={classes.headerContainer}>
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
           <Flex justify="center" align="center" gap={10}>
-            <Title size="xl">Portfolio</Title>
+            <Title size="xl" className={classes.link}>FRONT.DEV.CV</Title>
             <ColorSchemeToggle />
           </Flex>
 
@@ -127,14 +127,10 @@ export function Header() {
                 </SimpleGrid>
               </HoverCard.Dropdown>
             </HoverCard>
-            <a href="#" className={classes.link}>
-              Github
-            </a>
           </Group>
 
           <Group visibleFrom="sm">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            <Button >Default button</Button>
           </Group>
 
           <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />

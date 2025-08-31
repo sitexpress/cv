@@ -5,6 +5,6 @@ import { theme } from './theme';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <MantineThemeProvider theme={theme}>
-    <App />
+      <App />
   </MantineThemeProvider>
 );
