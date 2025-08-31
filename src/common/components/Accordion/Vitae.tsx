@@ -100,13 +100,15 @@ interface AccordionLabelProps {
   image: string;
   period: string;
   description: string;
+  position: string,
+  link: string,
 }
 
 function VitaeAccordion({
   label,
   image,
-  description,
   period,
+  description,
   position,
   link,
 }: AccordionLabelProps) {
