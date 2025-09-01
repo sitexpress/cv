@@ -35,32 +35,82 @@ const mockdata = [
   {
     icon: IconCode,
     title: 'HTML',
-    description: 'This Pokémon’s cry is very loud and distracting',
+    description: 'Знания: хорошие',
   },
   {
     icon: IconCoin,
     title: 'CSS',
-    description: 'The fluid of Smeargle’s tail secretions changes',
+    description: 'Знания: хорошие',
+  },
+  {
+    icon: IconCoin,
+    title: 'Scss, Sass',
+    description: 'Знания: хорошие',
   },
   {
     icon: IconBook,
     title: 'JavaScript',
-    description: 'Yanma is capable of seeing 360 degrees without',
+    description: 'Знания: хорошие',
   },
   {
     icon: IconFingerprint,
     title: 'TypeScript',
-    description: 'The shell’s rounded shape and the grooves on its.',
+    description: 'Знания: хорошие',
   },
   {
     icon: IconChartPie3,
     title: 'React',
-    description: 'This Pokémon uses its flying ability to quickly chase',
+    description: 'Знания: хорошие',
   },
   {
     icon: IconNotification,
     title: 'Next.js',
-    description: 'Combusken battles with the intensely hot flames it spews',
+    description: 'Знания: хорошие',
+  },
+  {
+    icon: IconNotification,
+    title: 'Express.js',
+    description: 'Знания: хорошие',
+  },
+  {
+    icon: IconNotification,
+    title: 'Nest.js',
+    description: 'Знания: хорошие',
+  },
+  {
+    icon: IconNotification,
+    title: 'Redux, RTK',
+    description: 'Знания: хорошие',
+  },
+  {
+    icon: IconNotification,
+    title: 'Prisma',
+    description: 'Знания: средние',
+  },
+  {
+    icon: IconNotification,
+    title: 'SQL',
+    description: 'Знания: средние',
+  },
+  {
+    icon: IconNotification,
+    title: 'Postgress',
+    description: 'Знания: средние',
+  },
+  {
+    icon: IconNotification,
+    title: 'Nginx',
+    description: 'Знания: базовые+',
+  },
+  {
+    icon: IconNotification,
+    title: 'Docker',
+    description: 'Знания: базовые+',
+  },
+  {
+    icon: IconNotification,
+    title: 'MantineUI, MUI, ShadcinUI',
+    description: 'Знания: базовые+',
   },
 ];
 
@@ -88,11 +138,13 @@ export function Header() {
   ));
 
   return (
-    <Box pb={120} className={classes.headerContainer}>
+    <Box>
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
           <Flex justify="center" align="center" gap={10}>
-            <Title size="xl" className={classes.link}>FRONT.DEV.CV</Title>
+            <Title size="lg" fw={700}>
+              FRONT.DEV.CV
+            </Title>
             <ColorSchemeToggle />
           </Flex>
 
@@ -105,7 +157,7 @@ export function Header() {
                 <a href="#" className={classes.link}>
                   <Center inline>
                     <Box component="span" mr={5}>
-                      Фичи
+                      Стек
                     </Box>
                     <IconChevronDown size={16} color={theme.colors.blue[6]} />
                   </Center>
@@ -114,10 +166,11 @@ export function Header() {
 
               <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
                 <Group justify="space-between" px="md">
-                  <Text fw={500}>Features</Text>
-                  <Anchor href="https://github.com/sitexpress" fz="xs" target="_blank">
+                  <Text fw={500}>ТЕХНОЛОГИИ</Text>
+                  {/* <Text fw={500}>которые я применяю</Text> */}
+                  {/* <Anchor href="https://github.com/sitexpress" fz="xs" target="_blank">
                     Link to my github
-                  </Anchor>
+                  </Anchor> */}
                 </Group>
 
                 <Divider my="sm" />
@@ -130,10 +183,16 @@ export function Header() {
           </Group>
 
           <Group visibleFrom="sm">
-            <Button >Default button</Button>
+            <Button>Default button</Button>
           </Group>
 
-          <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
+          <Burger
+            lineSize={3}
+            size="md"
+            opened={drawerOpened}
+            onClick={toggleDrawer}
+            hiddenFrom="sm"
+          />
         </Group>
       </header>
 
@@ -148,22 +207,21 @@ export function Header() {
       >
         <ScrollArea h="calc(100vh - 80px" mx="-md">
           <Divider my="sm" />
-
           <a href="#" className={classes.link}>
             Главная
           </a>
           <UnstyledButton className={classes.link} onClick={toggleLinks}>
             <Center inline>
               <Box component="span" mr={5}>
-                Фичи
+                Стек
               </Box>
               <IconChevronDown size={16} color={theme.colors.blue[6]} />
             </Center>
           </UnstyledButton>
           <Collapse in={linksOpened}>{links}</Collapse>
-          <a href="#" className={classes.link}>
+          {/* <a href="#" className={classes.link}>
             Github
-          </a>
+          </a> */}
           <Divider my="sm" />
 
           <Group justify="center" grow pb="xl" px="md">

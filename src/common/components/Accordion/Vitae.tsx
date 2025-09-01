@@ -139,7 +139,7 @@ function VitaeAccordion({
 
 export function Vitae() {
   const items = charactersList.map((item) => (
-    <Accordion.Item value={item.id} key={item.label}>
+    <Accordion.Item key={item.id} value={item.id}>
       <Accordion.Control aria-label={item.label}>
         <VitaeAccordion {...item} />
       </Accordion.Control>
@@ -175,8 +175,8 @@ export function Vitae() {
           }
           ta="left"
         >
-          {item.list.map((listItem: string) => (
-            <List.Item>{listItem}</List.Item>
+          {item.list.map((listItem: string, i:number) => (
+            <List.Item key={i}>{listItem}</List.Item>
           ))}
         </List>
       </Accordion.Panel>
@@ -189,7 +189,7 @@ export function Vitae() {
         Опыт
       </Title>
 
-      <Text mb={30} ta="center" size="md">
+      <Text pt={20} mb={50} ta="center" size="md">
         Моя анкета на
         <Text component="a" href="#" c="blue.6">
           {' '}

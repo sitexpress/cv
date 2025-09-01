@@ -10,8 +10,8 @@ export function Portfolio() {
         <Title ta="center" size={25}>
           Портфолио
         </Title>
-        <Text mb={50} ta="center" size="md">
-          цена автоматически обновляется каждую минуту
+        <Text pt={20} mb={50} ta="center" size="md">
+          Различные пет-проекты
         </Text>
 
         <Grid grow gutter="xl" justify="start" align="start">
