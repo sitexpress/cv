@@ -8,7 +8,6 @@ import {
   IconNotification,
 } from '@tabler/icons-react';
 import {
-  Anchor,
   Box,
   Burger,
   Button,
@@ -30,6 +29,7 @@ import {
 import { useDisclosure } from '@mantine/hooks';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import classes from './Header.module.css';
+import { useState } from 'react';
 
 const mockdata = [
   {
@@ -118,6 +118,17 @@ export function Header() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const theme = useMantineTheme();
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const defaultBtn = () => {
+    // Reset animation state
+    setIsAnimating(false);
+    
+    // Force reflow to restart animation
+    setTimeout(() => {
+      setIsAnimating(true);
+    }, 10);
+  };
 
   const links = mockdata.map((item) => (
     <UnstyledButton className={classes.subLink} key={item.title}>
@@ -138,9 +149,9 @@ export function Header() {
   ));
 
   return (
-    <Box>
+    <Box  className={classes.header_container}>
       <header className={classes.header}>
-        <Group justify="space-between" h="100%">
+        <Group justify="space-between" h="100%"  className={`animate__animated ${isAnimating ? 'animate__bounce' : ''}`}>
           <Flex justify="center" align="center" gap={10}>
             <Title size="lg" fw={700}>
               FRONT.DEV.CV
@@ -175,7 +186,7 @@ export function Header() {
 
                 <Divider my="sm" />
 
-                <SimpleGrid cols={2} spacing={0}>
+                <SimpleGrid cols={2} spacing={0} >
                   {links}
                 </SimpleGrid>
               </HoverCard.Dropdown>
@@ -183,7 +194,7 @@ export function Header() {
           </Group>
 
           <Group visibleFrom="sm">
-            <Button>Default button</Button>
+            <Button onClick={defaultBtn}>Default button</Button>
           </Group>
 
           <Burger

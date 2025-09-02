@@ -22,6 +22,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { useAppDispatch } from '@/common/hooks/hooks';
 import { useInvertedTheme } from '@/common/hooks/invertedColorTheme';
 import { setAppIsInitializedAC } from '@/features/appSlice';
+import { DownloadPdfHero } from '../DownloadPdf/DownloadPdf';
 import classes from './Hero.module.css';
 
 export function Hero() {
@@ -83,6 +84,24 @@ export function Hero() {
     },
   ];
 
+  const contactData = [
+    {
+      icon: IconNotification,
+      title: 'Telegram:',
+      description: '@sulnikon',
+    },
+    {
+      icon: IconCode,
+      title: 'Whatsapp:',
+      description: '+79649466790',
+    },
+    {
+      icon: IconCode,
+      title: 'Email:',
+      description: 'sitexpressorg@gmail.com',
+    },
+  ];
+
   const mockData = [
     {
       icon: IconNotification,
@@ -116,46 +135,13 @@ export function Hero() {
     },
     {
       icon: IconNotification,
-      title: 'Prisma',
+      title: 'Prisma, SQL, Postgress',
       description: 'Знания: средние',
     },
     {
       icon: IconNotification,
-      title: 'SQL, Postgress',
-      description: 'Знания: средние',
-    },
-    {
-      icon: IconNotification,
-      title: 'Nginx',
+      title: 'Nginx, Docker, Linux',
       description: 'Знания: базовые+',
-    },
-    {
-      icon: IconNotification,
-      title: 'Docker',
-      description: 'Знания: базовые+',
-    },
-    {
-      icon: IconNotification,
-      title: 'Linux',
-      description: 'Знания: базовые+',
-    },
-  ];
-
-   const contactData = [
-    {
-      icon: IconNotification,
-      title: 'Telegram',
-      description: '@sulnikon',
-    },
-    {
-      icon: IconCode,
-      title: 'Whatsapp',
-      description: '+79649466790',
-    },
-    {
-      icon: IconCode,
-      title: 'Email',
-      description: 'sitexpressorg@gmail.com',
     },
   ];
 
@@ -201,7 +187,9 @@ export function Hero() {
       <Popover>
         <Popover.Target>
           <Anchor component="a" inherit target="_blank">
-            <Text size="sm"><b>{item.title}</b> {item.description}</Text>
+            <Text size="sm">
+              <b>{item.title}</b> {item.description}
+            </Text>
           </Anchor>
         </Popover.Target>
         <Popover.Dropdown style={{ pointerEvents: 'none' }}>
@@ -211,6 +199,13 @@ export function Hero() {
     </List.Item>
   ));
 
+  const imageShadowTheme =
+    theme.colorScheme === 'dark'
+      ? {
+          filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.2))',
+        }
+      : { filter: 'drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.9))' };
+
   useEffect(() => {
     setTimeout(() => {
       dispatch(setAppIsInitializedAC({ isInitialized: false }));
@@ -218,7 +213,7 @@ export function Hero() {
   }, []);
 
   return (
-    <Container size="xl" mb={100} pt={50}>
+    <Container size="xl" className={classes.innerContainer}>
       <div className={classes.inner}>
         <div className={classes.content}>
           <div className="animate__animated animate__fadeInRight animate__delay-0.5s">
@@ -227,6 +222,7 @@ export function Hero() {
               <br /> разработчик
             </Title>
           </div>
+          <DownloadPdfHero />
           <div className="animate__animated animate__pulse">
             <Text c="dimmed" mt="md">
               Для связи:
@@ -243,6 +239,7 @@ export function Hero() {
             >
               {contactItems}
             </List>
+
             <Text c="dimmed" mt="md">
               Стек технологий:
             </Text>
@@ -258,22 +255,10 @@ export function Hero() {
             >
               {mockdataItems}
             </List>
-
-            {/* <Increment /> */}
           </div>
         </div>
         <div className="animate__animated animate__backInRight  animate__delay-1s">
-          <Image
-            src={img}
-            className={classes.image}
-            style={
-              theme.colorScheme === 'dark'
-                ? {
-                    filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.2))',
-                  }
-                : { filter: 'drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.9))' }
-            }
-          />
+          <Image src={img} className={classes.image} style={imageShadowTheme} />
         </div>
       </div>
     </Container>

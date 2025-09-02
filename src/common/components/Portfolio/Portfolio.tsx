@@ -15,35 +15,6 @@ export function Portfolio() {
         </Text>
 
         <Grid grow gutter="xl" justify="start" align="start">
-          {/* <Grid.Col span={{ base: 12, xs: 2 }}>
-
-            <Group justify="center" align="center">
-              <Anchor
-                component="a"
-                href="https://todolist-zeta-mocha.vercel.app/"
-                w={300}
-                target="_blank"
-              >
-                <Image
-                  src="/images/portfolio/todolist.jpg"
-                  fallbackSrc="https://placehold.co/600x250?text=todolist-list.app"
-                  alt="Todo-list.app"
-                  w={300}
-                  h={150}
-                  width={300}
-                  height={150}
-                  fit="fill"
-                  radius="20px"
-                  style={{ boxShadow: '4px 4px 10px rgba(0, 0, 0, 0.3)' }}
-                />
-                <Text c="dimmed" ta="center">
-                  Todolist.app
-                </Text>
-              </Anchor>
-            </Group>
-
-          </Grid.Col> */}
-
           <Grid.Col span={{ base: 12, xs: 2 }}>
             <Group justify="center" align="center">
               <Anchor
@@ -158,7 +129,7 @@ export function Portfolio() {
               </Anchor>
             </Group>
           </Grid.Col>
-        
+
           <Grid.Col span={{ base: 12, xs: 2 }}>
             <Group justify="center" align="center">
               <Anchor component="a" href="https://kindazor-app.vercel.app/" w={300} target="_blank">

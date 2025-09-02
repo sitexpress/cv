@@ -11,6 +11,7 @@ import {
   ThemeIcon,
   Title,
 } from '@mantine/core';
+import { DownloadPdf, DownloadPdfLink } from '../DownloadPdf/DownloadPdf';
 
 const charactersList = [
   {
@@ -100,8 +101,8 @@ interface AccordionLabelProps {
   image: string;
   period: string;
   description: string;
-  position: string,
-  link: string,
+  position: string;
+  link: string;
 }
 
 function VitaeAccordion({
@@ -175,7 +176,7 @@ export function Vitae() {
           }
           ta="left"
         >
-          {item.list.map((listItem: string, i:number) => (
+          {item.list.map((listItem: string, i: number) => (
             <List.Item key={i}>{listItem}</List.Item>
           ))}
         </List>
@@ -190,15 +191,13 @@ export function Vitae() {
       </Title>
 
       <Text pt={20} mb={50} ta="center" size="md">
-        Моя анкета на
-        <Text component="a" href="#" c="blue.6">
-          {' '}
-          HH.ru
-        </Text>
+        Открыть резюме c <DownloadPdfLink /> в новой вкладке в формате PDF
       </Text>
+
       <Accordion chevronPosition="right" variant="contained" radius="md">
         {items}
       </Accordion>
+      <DownloadPdf />
     </Container>
   );
 }

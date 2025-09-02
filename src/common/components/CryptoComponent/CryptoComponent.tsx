@@ -19,6 +19,7 @@ import '@mantine/carousel/styles.css';
 
 import { memo, useEffect, useMemo, useState } from 'react';
 import classes from './CryptoComponent.module.css';
+import { useInvertedTheme } from '@/common/hooks/invertedColorTheme';
 
 // Выносим отдельный элемент карусели в мемоизированный компонент
 const CryptoItem = memo(({ item, appStatus }: { item: any; appStatus: string }) => (
@@ -84,6 +85,8 @@ export function CryptoComponent() {
   const dispatch = useAppDispatch();
   const cryptos = useAppSelector((state) => state.crypto.cryptos);
   const appStatus = useAppSelector((state) => state.app.status);
+ const { backgroundCustomColors } = useInvertedTheme();
+
 
   const refreshPrice = () => {
     if (btnTimer === null || btnTimer === 0) {
@@ -129,7 +132,7 @@ export function CryptoComponent() {
       </Title>
 
       <Text mb={30} ta="center" size="md">
-        Реализованно с использованием
+        Реализация на основе
         <Text component="a" href="https://www.tokenmetrics.com/" c="blue.6">
           {' '}
           API Token Metrics
@@ -148,6 +151,8 @@ export function CryptoComponent() {
         radius="xl"
         w="300px"
         disabled={!!btnTimer}
+        variant="default"
+        style={{...backgroundCustomColors}}
       >
         {btnTimer ? `Можно обновить через: ${btnTimer} сек` : 'обновить цену'}
       </Button>
