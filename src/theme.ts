@@ -9,6 +9,8 @@ export const theme = createTheme({
         loaders: { ...Loader.defaultLoaders, custom: CssLoader },
         type: 'custom',
       },
+
+      
     }),
   },
 });

@@ -2,7 +2,7 @@ import { Box, Loader } from "@mantine/core";
 
 export const LoaderComponent = () => {
   return (
-    <Box pos="relative" h="100vh" w="100vw">
+    <Box pos="relative"  w="100vw">
       <Loader
         size={50}
         pos="absolute"
