@@ -201,8 +201,7 @@ export function Hero() {
       <Popover>
         <Popover.Target>
           <Anchor component="a" inherit target="_blank">
-            <b>{item.title}</b>
-            <Text size="sm" >{item.description}</Text>
+            <Text size="sm"><b>{item.title}</b> {item.description}</Text>
           </Anchor>
         </Popover.Target>
         <Popover.Dropdown style={{ pointerEvents: 'none' }}>
@@ -230,7 +229,7 @@ export function Hero() {
           </div>
           <div className="animate__animated animate__pulse">
             <Text c="dimmed" mt="md">
-              Портфолио сделано с использованием <br /> следующих технологий:
+              Для связи:
             </Text>
             <List
               mt={15}

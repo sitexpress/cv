@@ -123,17 +123,16 @@ export function CryptoComponent() {
   }, []);
 
   return (
-    <Container size="xl" p="xs" ta="center" pt={100} mb={100}>
+    <Container size="xl" p="xs" ta="center" pt={50} mb={100}>
       <Title ta="center" size={25}>
         Популярные монеты
       </Title>
 
       <Text mb={30} ta="center" size="md">
-        Реализация динамического отображения котировок криптовалют с интеллектуальным механизмом
-        обновления данных, использующая
+        Реализованно с использованием
         <Text component="a" href="https://www.tokenmetrics.com/" c="blue.6">
           {' '}
-          API Token Metrics.
+          API Token Metrics
         </Text>
       </Text>
       <Text mb={30} ta="center" size="md">
