@@ -17,7 +17,7 @@ import {
   ThemeIcon,
   Title,
   useMantineColorScheme,
-} from '@mantine/core';
+} from '@mantine/core'; 
 import { useDisclosure } from '@mantine/hooks';
 import { useAppDispatch } from '@/common/hooks/hooks';
 import { useInvertedTheme } from '@/common/hooks/invertedColorTheme';
@@ -205,6 +205,8 @@ export function Hero() {
           filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.2))',
         }
       : { filter: 'drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.9))' };
+
+
 
   useEffect(() => {
     setTimeout(() => {
