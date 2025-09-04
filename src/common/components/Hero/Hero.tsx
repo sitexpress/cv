@@ -92,11 +92,6 @@ export function Hero() {
     },
     {
       icon: IconCode,
-      title: 'Whatsapp:',
-      description: '+79649466790',
-    },
-    {
-      icon: IconCode,
       title: 'Email:',
       description: 'sitexpressorg@gmail.com',
     },
