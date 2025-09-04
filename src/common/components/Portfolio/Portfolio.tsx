@@ -36,20 +36,15 @@ export function Portfolio() {
                   style={{ boxShadow: '4px 4px 10px rgba(0, 0, 0, 0.3)' }}
                 />
                 <Text c="dimmed" ta="center">
-                  Google books.app
+                  Google.books.react.app
                 </Text>
               </Anchor>
             </Group>
           </Grid.Col>
-          
+
           <Grid.Col span={{ base: 12, xs: 2 }}>
             <Group justify="center" align="center">
-              <Anchor
-                component="a"
-                href="https://test-one.ru/"
-                w={300}
-                target="_blank"
-              >
+              <Anchor component="a" href="https://test-one.ru/" w={300} target="_blank">
                 <Image
                   src="/images/portfolio/english.jpg"
                   fallbackSrc="https://placehold.co/600x250?text=English.school.app.app"
@@ -63,13 +58,13 @@ export function Portfolio() {
                   style={{ boxShadow: '4px 4px 10px rgba(0, 0, 0, 0.3)' }}
                 />
                 <Text c="dimmed" ta="center">
-                  English school.app
+                  English.school.react.app
                 </Text>
               </Anchor>
             </Group>
           </Grid.Col>
 
-                    <Grid.Col span={{ base: 12, xs: 2 }}>
+          <Grid.Col span={{ base: 12, xs: 2 }}>
             <Group justify="center" align="center">
               <Anchor component="a" href="https://kindazor-app.vercel.app/" w={300} target="_blank">
                 <Image
@@ -85,7 +80,7 @@ export function Portfolio() {
                   style={{ boxShadow: '4px 4px 10px rgba(0, 0, 0, 0.3)' }}
                 />
                 <Text c="dimmed" ta="center">
-                  kindazor.drone.app
+                  kindazor.drone.react.app
                 </Text>
               </Anchor>
             </Group>
@@ -156,31 +151,6 @@ export function Portfolio() {
               </Anchor>
             </Group>
           </Grid.Col>
-
-          <Grid.Col span={{ base: 12, xs: 2 }}>
-            <Group justify="center" align="center">
-              <Anchor component="a" href="https://eye-form-app.vercel.app/" w={300} target="_blank">
-                <Image
-                  src="/images/portfolio/eye.jpg"
-                  fallbackSrc="https://placehold.co/600x250?text=eye.form.app"
-                  alt="Uber-app"
-                  w={300}
-                  h={150}
-                  width={300}
-                  height={150}
-                  fit="fill"
-                  radius="20px"
-                  style={{ boxShadow: '4px 4px 10px rgba(0, 0, 0, 0.3)' }}
-                />
-                <Text c="dimmed" ta="center">
-                  Next.app StroyFamily
-                </Text>
-              </Anchor>
-            </Group>
-          </Grid.Col>
-
-
-
         </Grid>
       </Container>
     </div>
